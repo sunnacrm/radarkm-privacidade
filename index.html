@@ -9,10 +9,9 @@
 <!--
   Página estática, sem scripts, cookies, fontes externas nem rastreadores. Pronta para o GitHub Pages (publicar como index.html).
   Responsável e contato preenchidos em 16/10/2026; nenhum campo pendente nesta versão.
+  1.0.0 (16/10/2026): item 12 descreve a assinatura como implementada (verificação no aparelho, sem servidor).
   ATUALIZAR ESTA PÁGINA ANTES DE PUBLICAR UMA VERSÃO DO APP QUE:
-   - lance a assinatura (Google Play Billing): reescrever o item 12 dizendo quais dados da compra o app usa
-     (produto, situação, token/código da compra), se ficam só no celular ou vão a um servidor (qual, por quanto tempo),
-     e acrescentar esse envio ao Resumo e ao item 13 (Compartilhamento); rever o formulário Segurança dos dados;
+   - passe a validar a assinatura num servidor (próprio ou de terceiros): item 12, Resumo, item 13 e Segurança dos dados;
    - troque o fornecedor de mapas/rotas: atualizar a tabela do item 9 e os links das políticas dos fornecedores;
    - adicione qualquer SDK ou envio pela internet novo.
   Fonte única do texto: este arquivo. POLITICA_PRIVACIDADE.md é a mesma política em Markdown; mantenha os dois iguais.
@@ -71,7 +70,7 @@ footer{color:var(--muted);font-size:.9rem;text-align:center;padding:8px 16px 40p
   <div class="wrap">
     <div class="app"><div class="logo" aria-hidden="true">KM</div><h1>Política de Privacidade do Radar KM</h1></div>
     <p class="meta">Aplicativo Radar KM para Android · identificador <code>com.radarkm</code><br>
-    Última atualização: 16 de outubro de 2026 · Vale para a versão 1.0.0-beta1 e seguintes até nova atualização</p>
+    Última atualização: 16 de outubro de 2026 · Vale para as versões 1.0.0-beta1 e 1.0.0 (a assinatura do item 12 existe a partir da 1.0.0) e seguintes até nova atualização</p>
   </div>
 </header>
 
@@ -79,7 +78,7 @@ footer{color:var(--muted);font-size:.9rem;text-align:center;padding:8px 16px 40p
 
 <section id="resumo">
   <h2>Resumo</h2>
-  <p>O Radar KM lê as ofertas de corrida da <strong>Uber Driver</strong> e da <strong>99 Motorista</strong> para calcular quanto cada corrida paga por quilômetro e por hora. Ele <strong>não tem contas, login nem servidor próprio</strong>, não exibe anúncios e não vende dados.</p>
+  <p>O Radar KM lê as ofertas de corrida da <strong>Uber Driver</strong> e da <strong>99 Motorista</strong> para calcular quanto cada corrida paga por quilômetro e por hora. Ele <strong>não tem contas, login nem servidor próprio</strong>, não exibe anúncios e não vende dados. O uso do Radar exige uma assinatura mensal feita pela Google Play.</p>
   <div class="summary">
     <div class="box ok">
       <h3>Fica só no seu celular</h3>
@@ -95,6 +94,7 @@ footer{color:var(--muted);font-size:.9rem;text-align:center;padding:8px 16px 40p
       <ul>
         <li>Métricas técnicas do componente de leitura de texto (ML Kit), enviadas ao Google — <a href="#mlkit">item 8</a></li>
         <li><strong>Só com o mapa ligado</strong> (vem desligado): endereços e coordenadas enviados a serviços de endereços, rotas e mapas — <a href="#mapa">item 9</a></li>
+        <li>Ao assinar: o pagamento e os dados da compra ficam com a Google Play; o Radar KM não os recebe — <a href="#assinatura">item 12</a></li>
       </ul>
     </div>
   </div>
@@ -251,6 +251,7 @@ footer{color:var(--muted);font-size:.9rem;text-align:center;padding:8px 16px 40p
       <tr><td>Notificações e serviço em primeiro plano</td><td>Manter o Radar KM ligado com uma notificação visível que mostra o estado e tem o botão Desligar</td><td>O serviço é necessário; mostrar a notificação pode ser recusado</td></tr>
       <tr><td>Internet e estado da rede</td><td>Mapa, endereços e rotas (<a href="#mapa">item 9</a>) e envio técnico do ML Kit (<a href="#mlkit">item 8</a>)</td><td>Concedida na instalação</td></tr>
       <tr><td>Localização precisa ou aproximada</td><td>Ponto A do mapa (<a href="#localizacao">item 10</a>)</td><td>Não, opcional</td></tr>
+      <tr><td>Faturamento da Google Play</td><td>Mostrar a oferta, fazer a assinatura e consultar se ela está ativa, pela Google Play (<a href="#assinatura">item 12</a>)</td><td>Concedida na instalação</td></tr>
       <tr><td>Verificar se a Uber Driver e a 99 Motorista estão instaladas</td><td>Saber se os dois aplicativos existem no celular e qual a versão deles, para o funcionamento da leitura. Nenhum outro aplicativo é consultado</td><td>Concedida na instalação</td></tr>
     </tbody>
   </table>
@@ -260,9 +261,25 @@ footer{color:var(--muted);font-size:.9rem;text-align:center;padding:8px 16px 40p
 
 <section id="assinatura">
   <h2>12. Assinatura e pagamentos</h2>
-  <p><strong>Na versão atual, o Radar KM não oferece assinatura nem compras</strong>, não contém sistema de pagamento e não trata nenhum dado de pagamento.</p>
-  <p>Está prevista a oferta futura de uma assinatura pelo sistema de faturamento do <strong>Google Play</strong>. Nesse caso, o pagamento será processado pelo Google Play, sob a <a href="https://policies.google.com/privacy" rel="noopener">Política de Privacidade do Google</a> e os <a href="https://play.google.com/about/play-terms/" rel="noopener">Termos de Serviço do Google Play</a>, e o Radar KM não receberá número de cartão nem dados bancários.</p>
-  <p><strong>Esta política será atualizada antes</strong> da publicação da versão com assinatura, para descrever quais informações da compra o aplicativo usará e onde elas ficarão guardadas.</p>
+  <p>A partir da versão 1.0.0, <strong>iniciar o Radar exige uma assinatura mensal</strong> feita pela Google Play: <strong>R$ 8,99 por mês</strong>, com renovação automática. Quem ainda não usou o teste recebe <strong>7 dias grátis</strong>, uma vez por conta Google, conforme as regras da Google Play. O valor e os dias grátis que valem para você aparecem no aplicativo e na tela de pagamento da Google Play antes da confirmação. Sem assinatura ativa, o Radar não inicia, mas histórico, metas, permissões, ajuda e privacidade continuam disponíveis.</p>
+  <h3>Pagamento</h3>
+  <ul>
+    <li>O pagamento é feito e processado <strong>pela Google Play</strong>, sob a <a href="https://policies.google.com/privacy" rel="noopener">Política de Privacidade do Google</a> e os <a href="https://play.google.com/about/play-terms/" rel="noopener">Termos de Serviço do Google Play</a>.</li>
+    <li>O Radar KM <strong>não recebe</strong> número de cartão, dados bancários, endereço de cobrança, nome ou e-mail da sua conta Google.</li>
+    <li>Não há cadastro no Radar KM: a assinatura fica vinculada à sua conta da Play Store.</li>
+  </ul>
+  <h3>Como o aplicativo confere a assinatura</h3>
+  <ul>
+    <li>O Radar KM <strong>não tem servidor</strong> e <strong>não envia os dados da compra ao responsável</strong> pelo aplicativo.</li>
+    <li>No próprio celular, o aplicativo pergunta à Google Play se há uma assinatura ativa, confere a assinatura digital que a Google Play coloca na compra e confirma o recebimento da compra à Google Play (exigência da Google Play).</li>
+    <li>Ficam guardados <strong>só no celular</strong>: a data e a hora da última confirmação da assinatura e se a renovação automática está ligada. Isso permite usar o Radar por até 3 dias sem conexão depois da última confirmação. O código da compra é usado apenas na memória, durante a consulta.</li>
+  </ul>
+  <h3>Cancelamento e reembolso</h3>
+  <ul>
+    <li>Cancele quando quiser: Play Store → foto do perfil → Pagamentos e assinaturas → Assinaturas, ou pelo botão <strong>GERENCIAR OU CANCELAR NA GOOGLE PLAY</strong> na tela Assinatura do aplicativo. Cancelando durante os dias grátis, nada é cobrado.</li>
+    <li>Reembolsos seguem as regras da Google Play.</li>
+  </ul>
+  <p class="note">Código de acesso para revisão: a equipe de revisão da Google Play pode receber um código temporário para testar o aplicativo sem comprar. Quando usado, esse código fica guardado só no celular até vencer.</p>
 </section>
 
 <section id="compartilhamento">
@@ -270,7 +287,8 @@ footer{color:var(--muted);font-size:.9rem;text-align:center;padding:8px 16px 40p
   <p>O Radar KM <strong>não vende dados</strong>, <strong>não exibe anúncios</strong> e <strong>não usa ferramentas de publicidade ou de análise próprias</strong>. Os únicos dados que saem do celular são:</p>
   <ul>
     <li>as métricas técnicas do ML Kit, enviadas ao Google (<a href="#mlkit">item 8</a>);</li>
-    <li>com o mapa ligado, os endereços, as coordenadas e os pedidos de imagens do mapa (<a href="#mapa">item 9</a>).</li>
+    <li>com o mapa ligado, os endereços, as coordenadas e os pedidos de imagens do mapa (<a href="#mapa">item 9</a>);</li>
+    <li>ao assinar, o que você informa diretamente à Google Play para pagar, tratado pela Google Play (<a href="#assinatura">item 12</a>).</li>
   </ul>
   <p>Como os demais dados ficam apenas no seu celular, o responsável pelo Radar KM <strong>não tem acesso</strong> a eles. Dados podem ser fornecidos a autoridades apenas quando houver obrigação legal e na medida em que o responsável os possua.</p>
 </section>
@@ -283,6 +301,7 @@ footer{color:var(--muted);font-size:.9rem;text-align:center;padding:8px 16px 40p
     <tbody>
       <tr><td>Imagens da tela</td><td>Não são guardadas: descartadas logo após a leitura</td><td>—</td></tr>
       <tr><td>Histórico de ofertas</td><td>Até você apagar (trajeto completo só para as 50 ofertas mais recentes)</td><td>Em <strong>Histórico</strong>: ícone de lixeira para um registro, ou <strong>APAGAR HISTÓRICO</strong> para tudo. Para não salvar mais: Ajuda e privacidade → “Salvar ofertas no histórico”</td></tr>
+      <tr><td>Situação da assinatura (última confirmação, renovação automática) e código de revisão, se usado</td><td>Atualizada a cada consulta à Google Play; até limpar os dados do app ou desinstalá-lo</td><td>Configurações do Android → Apps → Radar KM → Armazenamento → Limpar dados. <strong>A assinatura continua na sua conta Google</strong>: para encerrá-la, cancele na Google Play</td></tr>
       <tr><td>Metas, configurações e registro técnico</td><td>Até limpar os dados do app ou desinstalá-lo</td><td>Configurações do Android → Apps → Radar KM → Armazenamento → Limpar dados</td></tr>
       <tr><td>Tudo o que o Radar KM guarda no celular</td><td>—</td><td><strong>Desinstalar o Radar KM apaga todos esses dados</strong></td></tr>
       <tr><td>Dados recebidos pelo Google e pelos serviços de mapa</td><td>Conforme as regras de cada fornecedor</td><td>Pelos canais desses fornecedores (links nos itens 8 e 9)</td></tr>
@@ -316,7 +335,7 @@ footer{color:var(--muted);font-size:.9rem;text-align:center;padding:8px 16px 40p
 
 <section id="alteracoes">
   <h2>18. Alterações desta política</h2>
-  <p>Esta política será atualizada sempre que o aplicativo mudar a forma de tratar dados — por exemplo, ao trocar o fornecedor de mapas ou ao lançar a assinatura. A versão vigente fica sempre neste endereço, com a data da última atualização no topo. Mudanças importantes também serão informadas no aplicativo ou na página da loja.</p>
+  <p>Esta política será atualizada sempre que o aplicativo mudar a forma de tratar dados — por exemplo, ao trocar o fornecedor de mapas ou ao mudar a forma de conferir a assinatura. A versão vigente fica sempre neste endereço, com a data da última atualização no topo. Mudanças importantes também serão informadas no aplicativo ou na página da loja.</p>
 </section>
 
 <section id="contato">
