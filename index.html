@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Política de Privacidade do aplicativo Radar KM para Android: quais dados são acessados, para quê, o que fica no celular e o que é enviado.">
+<title>Política de Privacidade — Radar KM</title>
+<!--
+  Página estática, sem scripts, cookies, fontes externas nem rastreadores. Pronta para o GitHub Pages (publicar como index.html).
+  Responsável e contato preenchidos em 16/10/2026; nenhum campo pendente nesta versão.
+  ATUALIZAR ESTA PÁGINA ANTES DE PUBLICAR UMA VERSÃO DO APP QUE:
+   - lance a assinatura (Google Play Billing): reescrever o item 12 dizendo quais dados da compra o app usa
+     (produto, situação, token/código da compra), se ficam só no celular ou vão a um servidor (qual, por quanto tempo),
+     e acrescentar esse envio ao Resumo e ao item 13 (Compartilhamento); rever o formulário Segurança dos dados;
+   - troque o fornecedor de mapas/rotas: atualizar a tabela do item 9 e os links das políticas dos fornecedores;
+   - adicione qualquer SDK ou envio pela internet novo.
+  Fonte única do texto: este arquivo. POLITICA_PRIVACIDADE.md é a mesma política em Markdown; mantenha os dois iguais.
+  Conferido com o código do Radar KM 1.0.0-beta1 (versionCode 26), branch beta-publica.
+-->
+<style>
+:root{--bg:#f7f8fa;--card:#ffffff;--fg:#1b1f24;--muted:#57606a;--line:#d8dee4;--accent:#0b6bcb;--ok:#1a7f37;--okbg:#e9f7ee;--warn:#9a6700;--warnbg:#fff8e1;--mark:#fff3b0}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--card:#161b22;--fg:#e6edf3;--muted:#9da7b3;--line:#30363d;--accent:#58a6ff;--ok:#3fb950;--okbg:#12261a;--warn:#d29922;--warnbg:#2b2111;--mark:#5a4b00}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+header{background:var(--card);border-bottom:1px solid var(--line)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header .wrap{padding-top:28px;padding-bottom:22px}
+.app{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.logo{width:44px;height:44px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:.5px;flex:none}
+h1{font-size:1.7rem;line-height:1.25;margin:0}
+.meta{color:var(--muted);font-size:.95rem;margin:8px 0 0}
+main{padding:24px 0 64px}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 20px 14px;margin:0 0 16px}
+h2{font-size:1.2rem;margin:16px 0 8px;scroll-margin-top:12px}
+h3{font-size:1.02rem;margin:16px 0 4px}
+p,li{overflow-wrap:anywhere}
+ul{padding-left:22px;margin:6px 0 10px}
+li{margin:3px 0}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.88em;background:color-mix(in srgb,var(--line) 45%,transparent);padding:1px 5px;border-radius:4px}
+mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px}
+.summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 6px}
+.box{border-radius:10px;padding:10px 14px;border:1px solid var(--line)}
+.box h3{margin:4px 0 4px}
+.box.ok{background:var(--okbg);border-color:color-mix(in srgb,var(--ok) 35%,transparent)}
+.box.ok h3{color:var(--ok)}
+.box.warn{background:var(--warnbg);border-color:color-mix(in srgb,var(--warn) 35%,transparent)}
+.box.warn h3{color:var(--warn)}
+.box ul{margin:4px 0}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 10px}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:520px}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:color-mix(in srgb,var(--line) 35%,transparent)}
+nav ol{columns:2;column-gap:28px;padding-left:22px;margin:6px 0 10px}
+nav li{break-inside:avoid}
+.note{color:var(--muted);font-size:.92rem}
+footer{color:var(--muted);font-size:.9rem;text-align:center;padding:8px 16px 40px}
+@media (max-width:640px){
+  h1{font-size:1.4rem}
+  section{padding:4px 14px 12px}
+  .summary{grid-template-columns:1fr}
+  nav ol{columns:1}
+}
+@media print{body{background:#fff;color:#000}section{border:none;padding:0}header{border:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="app"><div class="logo" aria-hidden="true">KM</div><h1>Política de Privacidade do Radar KM</h1></div>
+    <p class="meta">Aplicativo Radar KM para Android · identificador <code>com.radarkm</code><br>
+    Última atualização: 16 de outubro de 2026 · Vale para a versão 1.0.0-beta1 e seguintes até nova atualização</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="resumo">
+  <h2>Resumo</h2>
+  <p>O Radar KM lê as ofertas de corrida da <strong>Uber Driver</strong> e da <strong>99 Motorista</strong> para calcular quanto cada corrida paga por quilômetro e por hora. Ele <strong>não tem contas, login nem servidor próprio</strong>, não exibe anúncios e não vende dados.</p>
+  <div class="summary">
+    <div class="box ok">
+      <h3>Fica só no seu celular</h3>
+      <ul>
+        <li>As capturas de tela (analisadas e descartadas na hora; nunca salvas)</li>
+        <li>O texto lido das ofertas</li>
+        <li>O histórico de ofertas, as metas e as configurações</li>
+        <li>O registro técnico de falhas</li>
+      </ul>
+    </div>
+    <div class="box warn">
+      <h3>Pode sair do celular</h3>
+      <ul>
+        <li>Métricas técnicas do componente de leitura de texto (ML Kit), enviadas ao Google — <a href="#mlkit">item 8</a></li>
+        <li><strong>Só com o mapa ligado</strong> (vem desligado): endereços e coordenadas enviados a serviços de endereços, rotas e mapas — <a href="#mapa">item 9</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Conteúdo</h2>
+  <nav aria-label="Índice">
+    <ol>
+      <li><a href="#responsavel">Responsável</a></li>
+      <li><a href="#o-que-e">O que o Radar KM faz</a></li>
+      <li><a href="#acessibilidade">Serviço de acessibilidade</a></li>
+      <li><a href="#captura">Captura pontual de tela e leitura de texto</a></li>
+      <li><a href="#ofertas">Informações lidas das ofertas</a></li>
+      <li><a href="#historico">Histórico no celular</a></li>
+      <li><a href="#local">Metas, configurações e registro técnico</a></li>
+      <li><a href="#mlkit">ML Kit (Google)</a></li>
+      <li><a href="#mapa">Mapa, endereços e rotas</a></li>
+      <li><a href="#localizacao">Localização</a></li>
+      <li><a href="#permissoes">Permissões</a></li>
+      <li><a href="#assinatura">Assinatura e pagamentos</a></li>
+      <li><a href="#compartilhamento">Compartilhamento</a></li>
+      <li><a href="#apagar">Retenção e como apagar seus dados</a></li>
+      <li><a href="#direitos">Seus direitos (LGPD)</a></li>
+      <li><a href="#seguranca">Segurança</a></li>
+      <li><a href="#criancas">Crianças e adolescentes</a></li>
+      <li><a href="#alteracoes">Alterações desta política</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ol>
+  </nav>
+</section>
+
+<section id="responsavel">
+  <h2>1. Responsável</h2>
+  <p>O Radar KM é disponibilizado por:</p>
+  <ul>
+    <li><strong>Responsável (controlador dos dados):</strong> Anderson Lisboa</li>
+    <li><strong>País:</strong> Brasil</li>
+    <li><strong>E-mail de contato e privacidade:</strong> <a href="mailto:andersonlidboa1@gmail.com">andersonlidboa1@gmail.com</a></li>
+  </ul>
+  <p>Dúvidas, pedidos e solicitações sobre privacidade e proteção de dados podem ser enviados para <a href="mailto:andersonlidboa1@gmail.com">andersonlidboa1@gmail.com</a>.</p>
+  <p>O Radar KM <strong>não tem vínculo com a Uber nem com a 99</strong> e não é endossado por essas empresas.</p>
+</section>
+
+<section id="o-que-e">
+  <h2>2. O que o Radar KM faz</h2>
+  <p>O Radar KM ajuda motoristas de aplicativo a avaliar ofertas de corrida. Ele lê o valor, as distâncias e os tempos das ofertas mostradas pela Uber Driver e pela 99 Motorista, calcula R$/km e R$/hora, compara com as metas que você definiu e mostra o resultado num pequeno painel sobre a tela.</p>
+  <p>O Radar KM <strong>não aceita, não recusa e não toca em nada</strong> na Uber ou na 99. A decisão é sempre sua.</p>
+</section>
+
+<section id="acessibilidade">
+  <h2>3. Serviço de acessibilidade</h2>
+  <p>O Radar KM usa a API de acessibilidade do Android (<code>AccessibilityService</code>) para ler as ofertas. <strong>Ele não é uma ferramenta para pessoas com deficiência</strong> e usa a acessibilidade apenas para esta leitura.</p>
+  <ul>
+    <li><strong>Consentimento:</strong> o serviço só funciona depois que você lê a explicação no aplicativo, toca em “CONCORDO COM O USO DA ACESSIBILIDADE” e ativa o Radar KM nas configurações do Android. Sem esse consentimento, nada é lido.</li>
+    <li><strong>Apenas dois aplicativos:</strong> o serviço está restrito, na configuração do próprio Android, aos pacotes da Uber Driver (<code>com.ubercab.driver</code>) e da 99 Motorista (<code>com.app99.driver</code>). Outros aplicativos não são lidos nem capturados.</li>
+    <li><strong>Como lê:</strong> pelos textos que esses aplicativos mostram na tela e por capturas pontuais da tela (<a href="#captura">item 4</a>).</li>
+    <li><strong>O que não faz:</strong> não executa toques nem gestos; não lê campos de senha nem o que você digita; não lê notificações; respeita os conteúdos que os aplicativos marcam como sensíveis ou protegidos contra captura.</li>
+  </ul>
+  <p>Para parar, toque em <strong>PARAR RADAR</strong> na tela inicial ou em <strong>DESLIGAR</strong> na notificação. Para desativar de vez: Configurações do Android → Acessibilidade → Radar KM.</p>
+</section>
+
+<section id="captura">
+  <h2>4. Captura pontual de tela e leitura de texto</h2>
+  <ul>
+    <li>Enquanto o Radar KM está ligado e a Uber Driver ou a 99 Motorista está aberta na tela, o serviço de acessibilidade tira <strong>capturas avulsas</strong> da tela para ler a oferta. Você também pode pedir uma leitura tocando em <strong>LER OFERTA AGORA</strong> na bolinha KM.</li>
+    <li>Cada imagem é analisada <strong>na memória do celular</strong> pelo reconhecimento de texto ML Kit, do Google, cujo modelo vem embutido no aplicativo. O texto é extraído no próprio aparelho.</li>
+    <li><strong>As imagens são descartadas logo após a leitura. Elas nunca são salvas em arquivo nem enviadas pela internet.</strong></li>
+    <li>As janelas do próprio Radar KM ficam fora das capturas.</li>
+  </ul>
+</section>
+
+<section id="ofertas">
+  <h2>5. Informações lidas das ofertas</h2>
+  <p>Da tela da oferta, o Radar KM procura somente:</p>
+  <ul>
+    <li>plataforma (Uber ou 99);</li>
+    <li>valor da corrida;</li>
+    <li>distância e tempo até o embarque e da viagem;</li>
+    <li>nota do passageiro;</li>
+    <li>local de embarque e de destino, como aparecem na oferta.</li>
+  </ul>
+  <p>Com isso, o aplicativo calcula R$/km, R$/hora e se a oferta atinge as suas metas. O Radar KM <strong>não procura nem guarda</strong> nome, foto ou telefone de passageiros, nem a forma de pagamento.</p>
+  <p class="note">A nota do passageiro e os locais de embarque e destino são informações sobre terceiros que a Uber e a 99 já mostram a você. O Radar KM as usa apenas para o cálculo e para o seu histórico local, conforme as suas escolhas (<a href="#historico">item 6</a>).</p>
+</section>
+
+<section id="historico">
+  <h2>6. Histórico no celular</h2>
+  <p>Com a opção <strong>“Salvar ofertas no histórico”</strong> ligada (vem ligada; desligue em Ajuda e privacidade), o Radar KM guarda <strong>no seu celular</strong>, para cada oferta reconhecida:</p>
+  <ul>
+    <li>data e hora, plataforma, valor, distâncias, tempos, R$/km, R$/hora, nota do passageiro e a classificação feita pelo aplicativo;</li>
+    <li>se a oferta foi aceita ou recusada, apenas quando você mesmo informa;</li>
+    <li><strong>locais</strong>, conforme a opção “Locais salvos no histórico”: <em>Somente bairro/cidade</em> (padrão), <em>Texto completo exibido</em> ou <em>Não salvar locais</em>;</li>
+    <li><strong>somente com o mapa ligado:</strong> coordenadas do embarque, do destino e da sua posição (se a localização for permitida) e o trajeto aproximado. O desenho completo do trajeto fica guardado apenas para as 50 ofertas mais recentes.</li>
+  </ul>
+  <p>O histórico fica num banco de dados <strong>privado do aplicativo</strong>, que outros aplicativos não acessam. Ele <strong>não é enviado</strong> a nenhum servidor, e o backup automático do Android está <strong>desativado</strong> para o Radar KM.</p>
+</section>
+
+<section id="local">
+  <h2>7. Metas, configurações e registro técnico</h2>
+  <ul>
+    <li><strong>Metas e preferências</strong> (valor mínimo por km, por hora e por corrida, nota mínima, tamanho e posição do painel etc.) ficam salvas somente no celular.</li>
+    <li><strong>Registro técnico de falhas:</strong> para ajudar a corrigir erros, o aplicativo guarda no celular a descrição técnica do último erro do próprio Radar KM e os últimos 15 eventos de funcionamento (por exemplo, “serviço iniciado”). Esse registro não contém o conteúdo das ofertas e <strong>não é enviado</strong> pelo aplicativo.</li>
+  </ul>
+</section>
+
+<section id="mlkit">
+  <h2>8. ML Kit (Google)</h2>
+  <p>O reconhecimento de texto usa o <strong>ML Kit</strong>, componente fornecido pelo Google. A leitura das imagens acontece no celular, mas, segundo a documentação do Google, o ML Kit <strong>envia ao Google métricas técnicas</strong> de uso e desempenho:</p>
+  <ul>
+    <li>informações do aparelho (por exemplo, modelo e versão do sistema);</li>
+    <li>informações do aplicativo (identificador do pacote e versão);</li>
+    <li>um identificador por instalação, que não identifica o usuário nem o aparelho de forma única;</li>
+    <li>métricas de desempenho, configuração da API, tipo e tamanho dos dados processados, eventos e códigos de erro.</li>
+  </ul>
+  <p><strong>As imagens da tela e o texto lido não são enviados.</strong> Esse envio é feito pelo próprio componente do Google e o Radar KM não oferece opção para desligá-lo. O tratamento segue as regras do Google: <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">Divulgação de dados do ML Kit</a> e <a href="https://policies.google.com/privacy" rel="noopener">Política de Privacidade do Google</a>.</p>
+</section>
+
+<section id="mapa">
+  <h2>9. Mapa, endereços e rotas (opcional)</h2>
+  <p>O mapa mostra a sua posição (A), o embarque (B), o destino (C) e o trajeto. Ele <strong>vem desligado</strong> e pode ser ligado ou desligado em <em>Ajuda e privacidade → “Mostrar mapa da oferta (usa internet)”</em>. <strong>Com o mapa desligado, nenhum dos serviços abaixo é usado.</strong></p>
+  <p>Com o mapa ligado, a cada oferta reconhecida e ao exibir o mapa, o Radar KM usa:</p>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Serviço</th><th>O que é enviado</th><th>Para quê</th><th>Responsável</th></tr></thead>
+    <tbody>
+      <tr><td>Serviço de endereços do Android (Geocoder)</td><td>O texto do endereço de embarque e de destino, como aparece na oferta, e uma área aproximada (cerca de 90 km) em volta da sua posição, se conhecida</td><td>Transformar o endereço em coordenadas</td><td>Fornecedor do serviço de localização do seu aparelho (em geral, o Google)</td></tr>
+      <tr><td>Serviço de rotas — hoje, o servidor público do OSRM</td><td>As coordenadas dos pontos A, B e C</td><td>Calcular o trajeto pelas ruas</td><td>Projeto OSRM / FOSSGIS e.V. (Alemanha)</td></tr>
+      <tr><td>Imagens do mapa — hoje, OpenStreetMap</td><td>O pedido das imagens da área mostrada no mapa; como em qualquer acesso à internet, o servidor recebe o endereço IP</td><td>Desenhar o mapa</td><td>OpenStreetMap Foundation</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Não são enviados imagens da tela, valor da corrida, nota, nome do passageiro nem a oferta inteira. As rotas e as imagens do mapa usam conexão criptografada (HTTPS). Como alguns desses servidores ficam fora do Brasil, pode haver <strong>transferência internacional</strong> desses dados (LGPD, art. 33). Políticas dos serviços: <a href="https://policies.google.com/privacy" rel="noopener">Google</a>, <a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap Foundation</a>, <a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/" rel="noopener">FOSSGIS (OSRM)</a>.</p>
+</section>
+
+<section id="localizacao">
+  <h2>10. Localização (opcional)</h2>
+  <ul>
+    <li>A localização só é usada <strong>com o mapa ligado</strong> e se você permitir. O Radar KM lê a sua posição <strong>uma vez por oferta</strong>, para marcar o ponto A no mapa e calcular o trajeto até o embarque.</li>
+    <li><strong>Não há rastreamento contínuo</strong> e o aplicativo <strong>não pede</strong> a permissão de localização em segundo plano (“permitir o tempo todo”). A leitura acontece apenas enquanto o Radar KM está ligado, com a notificação visível.</li>
+    <li>A posição é enviada ao serviço de endereços (como área aproximada) e ao serviço de rotas (<a href="#mapa">item 9</a>), e guardada no histórico local junto com a oferta.</li>
+    <li>Você pode negar ou retirar a permissão a qualquer momento nas configurações do Android. O mapa continua funcionando, sem o ponto A.</li>
+  </ul>
+</section>
+
+<section id="permissoes">
+  <h2>11. Permissões</h2>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Permissão</th><th>Para que é usada</th><th>Obrigatória?</th></tr></thead>
+    <tbody>
+      <tr><td>Serviço de acessibilidade</td><td>Ler as ofertas da Uber Driver e da 99 Motorista (<a href="#acessibilidade">item 3</a>)</td><td>Sim, para o Radar funcionar</td></tr>
+      <tr><td>Aparecer sobre outros apps (sobreposição)</td><td>Mostrar a bolinha KM e o painel com o resultado sobre o app de corridas</td><td>Sim, para ver o resultado</td></tr>
+      <tr><td>Notificações e serviço em primeiro plano</td><td>Manter o Radar KM ligado com uma notificação visível que mostra o estado e tem o botão Desligar</td><td>O serviço é necessário; mostrar a notificação pode ser recusado</td></tr>
+      <tr><td>Internet e estado da rede</td><td>Mapa, endereços e rotas (<a href="#mapa">item 9</a>) e envio técnico do ML Kit (<a href="#mlkit">item 8</a>)</td><td>Concedida na instalação</td></tr>
+      <tr><td>Localização precisa ou aproximada</td><td>Ponto A do mapa (<a href="#localizacao">item 10</a>)</td><td>Não, opcional</td></tr>
+      <tr><td>Verificar se a Uber Driver e a 99 Motorista estão instaladas</td><td>Saber se os dois aplicativos existem no celular e qual a versão deles, para o funcionamento da leitura. Nenhum outro aplicativo é consultado</td><td>Concedida na instalação</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Você pode retirar a acessibilidade, a sobreposição, as notificações e a localização a qualquer momento nas configurações do Android.</p>
+</section>
+
+<section id="assinatura">
+  <h2>12. Assinatura e pagamentos</h2>
+  <p><strong>Na versão atual, o Radar KM não oferece assinatura nem compras</strong>, não contém sistema de pagamento e não trata nenhum dado de pagamento.</p>
+  <p>Está prevista a oferta futura de uma assinatura pelo sistema de faturamento do <strong>Google Play</strong>. Nesse caso, o pagamento será processado pelo Google Play, sob a <a href="https://policies.google.com/privacy" rel="noopener">Política de Privacidade do Google</a> e os <a href="https://play.google.com/about/play-terms/" rel="noopener">Termos de Serviço do Google Play</a>, e o Radar KM não receberá número de cartão nem dados bancários.</p>
+  <p><strong>Esta política será atualizada antes</strong> da publicação da versão com assinatura, para descrever quais informações da compra o aplicativo usará e onde elas ficarão guardadas.</p>
+</section>
+
+<section id="compartilhamento">
+  <h2>13. Compartilhamento</h2>
+  <p>O Radar KM <strong>não vende dados</strong>, <strong>não exibe anúncios</strong> e <strong>não usa ferramentas de publicidade ou de análise próprias</strong>. Os únicos dados que saem do celular são:</p>
+  <ul>
+    <li>as métricas técnicas do ML Kit, enviadas ao Google (<a href="#mlkit">item 8</a>);</li>
+    <li>com o mapa ligado, os endereços, as coordenadas e os pedidos de imagens do mapa (<a href="#mapa">item 9</a>).</li>
+  </ul>
+  <p>Como os demais dados ficam apenas no seu celular, o responsável pelo Radar KM <strong>não tem acesso</strong> a eles. Dados podem ser fornecidos a autoridades apenas quando houver obrigação legal e na medida em que o responsável os possua.</p>
+</section>
+
+<section id="apagar">
+  <h2>14. Retenção e como apagar seus dados</h2>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Dado</th><th>Por quanto tempo</th><th>Como apagar</th></tr></thead>
+    <tbody>
+      <tr><td>Imagens da tela</td><td>Não são guardadas: descartadas logo após a leitura</td><td>—</td></tr>
+      <tr><td>Histórico de ofertas</td><td>Até você apagar (trajeto completo só para as 50 ofertas mais recentes)</td><td>Em <strong>Histórico</strong>: ícone de lixeira para um registro, ou <strong>APAGAR HISTÓRICO</strong> para tudo. Para não salvar mais: Ajuda e privacidade → “Salvar ofertas no histórico”</td></tr>
+      <tr><td>Metas, configurações e registro técnico</td><td>Até limpar os dados do app ou desinstalá-lo</td><td>Configurações do Android → Apps → Radar KM → Armazenamento → Limpar dados</td></tr>
+      <tr><td>Tudo o que o Radar KM guarda no celular</td><td>—</td><td><strong>Desinstalar o Radar KM apaga todos esses dados</strong></td></tr>
+      <tr><td>Dados recebidos pelo Google e pelos serviços de mapa</td><td>Conforme as regras de cada fornecedor</td><td>Pelos canais desses fornecedores (links nos itens 8 e 9)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="direitos">
+  <h2>15. Seus direitos (LGPD)</h2>
+  <p>Pela Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você pode pedir confirmação e acesso aos dados, correção, anonimização, bloqueio ou eliminação, portabilidade, informação sobre compartilhamento e revogação do consentimento.</p>
+  <p>Como o Radar KM não tem contas nem servidor próprio, quase todos os dados ficam sob o seu controle direto no celular (<a href="#apagar">item 14</a>). Para dúvidas ou pedidos, escreva para <a href="mailto:andersonlidboa1@gmail.com">andersonlidboa1@gmail.com</a>. Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (<a href="https://www.gov.br/anpd/" rel="noopener">ANPD</a>).</p>
+  <p><strong>Revogar o consentimento:</strong> desative o Radar KM em Configurações do Android → Acessibilidade; desligue o mapa; negue ou retire a permissão de localização.</p>
+</section>
+
+<section id="seguranca">
+  <h2>16. Segurança</h2>
+  <ul>
+    <li>Os dados ficam na área privada do aplicativo, protegida pelo Android.</li>
+    <li>O backup automático do Android está desativado para o Radar KM.</li>
+    <li>As capturas de tela existem só na memória, pelo tempo da leitura.</li>
+    <li>As conexões do aplicativo com os serviços de rotas e de mapas usam HTTPS.</li>
+  </ul>
+  <p>Nenhum sistema é totalmente seguro. Mantenha o celular protegido com bloqueio de tela.</p>
+</section>
+
+<section id="criancas">
+  <h2>17. Crianças e adolescentes</h2>
+  <p>O Radar KM é destinado a motoristas de aplicativo adultos e não é dirigido a menores de 18 anos.</p>
+</section>
+
+<section id="alteracoes">
+  <h2>18. Alterações desta política</h2>
+  <p>Esta política será atualizada sempre que o aplicativo mudar a forma de tratar dados — por exemplo, ao trocar o fornecedor de mapas ou ao lançar a assinatura. A versão vigente fica sempre neste endereço, com a data da última atualização no topo. Mudanças importantes também serão informadas no aplicativo ou na página da loja.</p>
+</section>
+
+<section id="contato">
+  <h2>19. Contato</h2>
+  <p>Anderson Lisboa<br>E-mail: <a href="mailto:andersonlidboa1@gmail.com">andersonlidboa1@gmail.com</a><br>Brasil</p>
+</section>
+
+</main>
+<footer>Radar KM — não tem vínculo com a Uber nem com a 99.</footer>
+</body>
+</html>
